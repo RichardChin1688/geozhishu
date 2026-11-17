@@ -50,7 +50,7 @@ geozhishu/
 | A | @ | 185.199.109.153 | 600 |
 | A | @ | 185.199.110.153 | 600 |
 | A | @ | 185.199.111.153 | 600 |
-| CNAME | www | 你的用户名.github.io | 600 |
+| CNAME | www | richardchin1688.github.io | 600 |
 
 5. 等 DNS 生效（约 10 分钟–2 小时）后，在 Pages 里勾选 **Enforce HTTPS**
 6. 验证：`curl -I https://geozhishu.com` 应返回 `200`
