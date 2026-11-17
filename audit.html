@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>查服务商 — GEO 服务商备案名录 | GEO指数</title>
+<meta name="description" content="GEO指数服务商备案名录：进入名录须提交专利软著、公开方法论、带基线的案例三项可验证证据。关联方适用同一标准，无豁免。">
+<link rel="canonical" href="https://geozhishu.com/audit.html">
+<link rel="stylesheet" href="assets/style.css">
+
+
+<!-- JSON-LD:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://geozhishu.com/#organization",
+  "name": "GEO指数",
+  "alternateName": [
+    "GEO指数",
+    "geozhishu",
+    "GEO Index"
+  ],
+  "url": "https://geozhishu.com/",
+  "description": "GEO指数是中文生成式AI搜索领域的第三方度量机构，用公开算法、公开样本、公开原始回答测量品牌在AI答案中的出现率、位次、准确度与信源质量。不收排名费，不做优化执行，不承诺排名。",
+  "foundingDate": "2026-11-10",
+  "email": "method@geozhishu.com",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "远见教育科技山西有限责任公司"
+  },
+  "knowsAbout": [
+    "生成式引擎优化",
+    "GEO",
+    "AI搜索可见度",
+    "AI品牌监测",
+    "答案引擎优化",
+    "AEO",
+    "AI语料治理",
+    "信源权威度",
+    "AI幻觉检测"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://geozhishu.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "查服务商",
+      "item": "https://geozhishu.com/audit.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "GEO服务商备案名录",
+  "description": "进入GEO指数备案名录须提交技术证据、方法证据、结果证据三项可验证材料。四条否决项一票出局，运营方关联企业无豁免。",
+  "url": "https://geozhishu.com/audit.html",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@id": "https://geozhishu.com/#website"
+  },
+  "publisher": {
+    "@id": "https://geozhishu.com/#organization"
+  }
+}
+</script>
+<!-- JSON-LD:END -->
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in">
+    <a href="index.html" class="logo"><span class="mark">GEO</span><span class="nm">GEO指数</span><span class="en">geozhishu.com</span></a>
+    <nav class="nav">
+      <a href="index.html">首页</a>
+      <a href="index-rank.html">指数榜</a>
+      <a href="sources.html">信源榜</a>
+      <a href="check.html">查企业</a>
+      <a href="audit.html" class="on">查服务商</a>
+      <a href="warnings.html">失范公示</a>
+      <a href="faq.html">问答</a>
+      <a href="geo-selfcheck.html">自检</a>
+      <a href="method.html">关于</a>
+    </nav>
+    <button class="mnav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="展开导航">菜单 ▾</button>
+    <a href="check.html" class="head-cta">测我的指数</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb">Audit / 查服务商</div>
+    <h1>GEO 服务商备案名录</h1>
+    <p>企业选 GEO 服务商时，缺的是一份可以查的证据清单。这一页把标准公开：三项证据齐备才能进名录，四条否决项一票出局。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+
+    <div class="note">
+      <strong>首期名录 2026 年 12 月开放申请。</strong>
+      <a href="mailto:audit@geozhishu.com">audit@geozhishu.com</a>
+    </div>
+
+    <div class="sec-head" style="margin-top:44px">
+      <div class="tag">Status</div>
+      <h2>名录状态</h2>
+    </div>
+    <div id="tiers" class="steps" style="grid-template-columns:repeat(4,1fr)"></div>
+
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">Evidence</div>
+      <h2>进入名录须提交的三项证据</h2>
+      <p>每项都要能核。核不了的，不算证据。</p>
+    </div>
+    <div id="evid" class="steps"></div>
+
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">Veto</div>
+      <h2>否决项：四条，一票出局</h2>
+      <p>触发任一条，直接否决，不进入审查流程，不设补正期。</p>
+    </div>
+    <div class="warn-grid" id="veto" style="grid-template-columns:1fr 1fr"></div>
+
+    <div class="note red" style="margin-top:28px">
+      <strong>运营方关联企业适用同一标准，无任何豁免。</strong>
+      关联企业进入名录时，在名录页明确标注关联关系。这条规定写进方法论第 6.4 节——
+      我们设计的标准，第一个约束对象是我们自己。
+    </div>
+
+    <!-- 为什么 -->
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">Why</div>
+      <h2>为什么需要一个备案名录</h2>
+      <p>
+        2026 年上半年，GEO 行业走完了一个新兴赛道从爆发到整顿的全过程：1 月概念升温，3·15 曝光投毒灰产，随后进入规范期。
+        企业在选型时面对的共同困境不是「没有服务商」，而是<strong style="color:var(--ink)">「看不出谁是真的」</strong>。
+        名录的价值不在于给谁背书，在于把「可以核的东西」和「不能核的话术」分开。
+      </p>
+    </div>
+    <div class="plist">
+      <div class="pitem"><div class="ic">01</div><div><h3>看专利号，不看公司名气</h3><p>授权发明专利可以查：专利号、权利人、标题。列得出专利号、权利人能对上、标题与 GEO 业务相关，这三条都能满足的，才叫技术证据。</p></div></div>
+      <div class="pitem"><div class="ic">02</div><div><h3>看方法，不看案例包装</h3><p>愿意公开采样平台、轮次、问题集构建方式的，说明它的数字经得起重算。只给结论不给算法的，你也无法验证，它也无法被追责。</p></div></div>
+      <div class="pitem"><div class="ic">03</div><div><h3>看两个数，不看一个倍数</h3><p>「提升 300%」是结果的一部分，不是结果。完整的结果至少是两个数：事实出现率、事实正确率。前者说 AI 提没提到你，后者说 AI 说对没说你。</p></div></div>
+      <div class="pitem"><div class="ic">04</div><div><h3>看基线，不看峰值</h3><p>没有基线的提升无法归因。基线之外，还要问同期有没有对照组——同一个问题集，一个不投喂的对照品牌，同期变化是多少。</p></div></div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div>
+      <div class="logo"><span class="mark">GEO</span><span class="nm">GEO指数</span></div>
+      <p class="desc">生成式 AI 搜索时代的第三方度量机构。公开算法、公开样本、公开原始回答，不收排名费。</p>
+    </div>
+    <div><h4>数据产品</h4><ul><li><a href="index-rank.html">GEO 指数榜</a></li><li><a href="sources.html">信源榜</a></li><li><a href="check.html">查企业</a></li><li><a href="audit.html">服务商备案名录</a></li></ul></div>
+    <div><h4>方法论</h4><ul><li><a href="method.html">方法论 v1.0</a></li><li><a href="method.html#protocol">采样协议</a></li><li><a href="faq.html">常见问题</a></li><li><a href="geo-selfcheck.html">本站自检</a></li></ul></div>
+    <div><h4>监督</h4><ul><li><a href="warnings.html">失范公示</a></li><li><a href="about.html">关于我们</a></li><li><a href="mailto:method@geozhishu.com">方法质疑</a></li><li><a href="mailto:report@geozhishu.com">失范举报</a></li></ul></div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 GEO指数 · 运营主体：远见教育科技山西有限责任公司</span>
+    <span>引用请署名 GEO指数（geozhishu.com）</span>
+  </div>
+</footer>
+
+<script src="data/site-data.js"></script>
+<script>
+(function(){
+  var d=window.GZ, a=d.audit;
+
+  var th='';
+  a.tiers.forEach(function(t){
+    th+='<div class="step">'+
+      '<div class="n">'+t.status+'</div>'+
+      '<h3>'+t.tier+'　<span style="font-family:var(--mono);font-size:20px;color:var(--accent)">'+t.count+'</span></h3>'+
+      '<p>'+t.desc+'</p>'+
+    '</div>';
+  });
+  document.getElementById('tiers').innerHTML=th;
+
+  var eh='';
+  a.evidence.forEach(function(e){
+    var li=e.items.map(function(i){ return '<li style="margin-bottom:7px">'+i+'</li>'; }).join('');
+    eh+='<div class="step">'+
+      '<div class="n">'+e.key+'</div>'+
+      '<ul style="list-style:none;font-size:14.2px;color:var(--muted);line-height:1.72;margin-top:6px">'+li+'</ul>'+
+    '</div>';
+  });
+  document.getElementById('evid').innerHTML=eh;
+
+  var vh='';
+  a.veto.forEach(function(v,i){
+    vh+='<div class="warn">'+
+      '<div class="hd"><span class="pill l6">否决 '+(i+1)+'</span></div>'+
+      '<p style="font-size:15px;color:var(--ink-2)">'+v+'</p>'+
+    '</div>';
+  });
+  document.getElementById('veto').innerHTML=vh;
+})();
+</script>
+</body>
+</html>

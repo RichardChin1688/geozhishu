@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>本站 GEO 自检看板 — GEO指数 自己做 GEO 的公开记录 | GEO指数</title>
+<meta name="description" content="GEO指数 自己做了哪些 GEO 工作：结构化数据、llms.txt、AI 爬虫放行、问答页、实体一致性。全部可当场验证，包括我们自己的不足。">
+<meta name="keywords" content="GEO自检,网站GEO优化,JSON-LD,llms.txt,AI爬虫,结构化数据">
+<link rel="canonical" href="https://geozhishu.com/geo-selfcheck.html">
+<link rel="stylesheet" href="assets/style.css">
+
+<!-- JSON-LD:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://geozhishu.com/#organization",
+  "name": "GEO指数",
+  "alternateName": [
+    "GEO指数",
+    "geozhishu",
+    "GEO Index"
+  ],
+  "url": "https://geozhishu.com/",
+  "description": "GEO指数是中文生成式AI搜索领域的第三方度量机构，用公开算法、公开样本、公开原始回答测量品牌在AI答案中的出现率、位次、准确度与信源质量。不收排名费，不做优化执行，不承诺排名。",
+  "foundingDate": "2026-11-10",
+  "email": "method@geozhishu.com",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "远见教育科技山西有限责任公司"
+  },
+  "knowsAbout": [
+    "生成式引擎优化",
+    "GEO",
+    "AI搜索可见度",
+    "AI品牌监测",
+    "答案引擎优化",
+    "AEO",
+    "AI语料治理",
+    "信源权威度",
+    "AI幻觉检测"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://geozhishu.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "本站自检",
+      "item": "https://geozhishu.com/geo-selfcheck.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "本站 GEO 自检看板",
+  "description": "GEO指数自己做了哪些GEO工作：结构化数据、llms.txt、AI爬虫放行、定义先行写法、实体一致性。逐项可验证，包括未完成的短板。",
+  "url": "https://geozhishu.com/geo-selfcheck.html",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@id": "https://geozhishu.com/#website"
+  },
+  "publisher": {
+    "@id": "https://geozhishu.com/#organization"
+  }
+}
+</script>
+<!-- JSON-LD:END -->
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in">
+    <a href="index.html" class="logo"><span class="mark">GEO</span><span class="nm">GEO指数</span><span class="en">geozhishu.com</span></a>
+    <nav class="nav">
+      <a href="index.html">首页</a>
+      <a href="index-rank.html">指数榜</a>
+      <a href="sources.html">信源榜</a>
+      <a href="check.html">查企业</a>
+      <a href="audit.html">查服务商</a>
+      <a href="warnings.html">失范公示</a>
+      <a href="faq.html">问答</a>
+      <a href="geo-selfcheck.html" class="on">自检</a>
+    </nav>
+    <button class="mnav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="展开导航">菜单 ▾</button>
+    <a href="check.html" class="head-cta">测我的指数</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb">Self-check / 本站 GEO 自检</div>
+    <h1>本站 GEO 自检看板</h1>
+    <p>做度量的人，自己的站必须先做对。这一页把 GEO指数 自己做过的事全部公开，包括做到的和没做到的——每一条都可以当场验证。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+
+    <div class="note">
+      <strong>这份看板的意义：可验证的自我要求。</strong>
+      如果一家教人做 GEO 的机构，自己的网站 AI 都读不懂，它说的话就不必听。
+      所以这一页不写形容词，只写做了什么、怎么验证。
+    </div>
+
+    <!-- 总览 -->
+    <div class="sec-head" style="margin-top:44px">
+      <div class="tag">Overview</div>
+      <h2>十七项检查</h2>
+      <p>逐项列出完成状态。未完成的照样列出来，标注原因与计划时间。</p>
+    </div>
+
+    <div class="stats" style="margin-bottom:36px">
+      <div class="stats-in">
+        <div class="stat"><div class="num" id="s-done">17</div><div class="lb">已完成</div></div>
+        <div class="stat"><div class="num">3</div><div class="lb">部分完成</div></div>
+        <div class="stat"><div class="num">2</div><div class="lb">待办</div></div>
+        <div class="stat"><div class="num">10<small>类</small></div><div class="lb">放行的 AI 爬虫</div></div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <div class="tbl-head">
+        <h3>检查项清单</h3>
+        <div class="meta">最后自查 2026-11-11</div>
+      </div>
+      <table>
+        <thead><tr><th style="width:44px">#</th><th>检查项</th><th>做了什么</th><th>怎么验证</th><th style="width:78px">状态</th></tr></thead>
+        <tbody id="checks"></tbody>
+      </table>
+    </div>
+
+    <!-- 结构化数据 -->
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">Structured Data</div>
+      <h2>一、结构化数据：让 AI 一眼认出我们是谁</h2>
+      <p>全站 9 页共注入 27 块 JSON-LD，覆盖实体、网站、定义集、数据集、问答、面包屑六种类型。内联在 HTML 里，不依赖外部 JS——AI 爬虫不保证执行脚本。</p>
+    </div>
+
+    <div class="tbl-wrap">
+      <div class="tbl-head"><h3>JSON-LD 部署明细</h3><div class="meta">schema.org 标准</div></div>
+      <table>
+        <thead><tr><th>页面</th><th>注入的 schema 类型</th><th>作用</th></tr></thead>
+        <tbody>
+          <tr><td class="brand-cell">index.html</td><td class="num">Organization · WebSite · DefinedTermSet · WebPage</td><td>确立「GEO指数」为一个实体，并声明站内搜索接口</td></tr>
+          <tr><td class="brand-cell">index-rank.html</td><td class="num">Organization · BreadcrumbList · Dataset</td><td>把指数榜声明为可引用的数据集</td></tr>
+          <tr><td class="brand-cell">sources.html</td><td class="num">Organization · BreadcrumbList · Dataset</td><td>把信源榜声明为可引用的数据集</td></tr>
+          <tr><td class="brand-cell">check.html</td><td class="num">Organization · BreadcrumbList · WebApplication</td><td>声明为可用的查询应用</td></tr>
+          <tr><td class="brand-cell">audit.html</td><td class="num">Organization · BreadcrumbList · WebPage</td><td>服务商名录页</td></tr>
+          <tr><td class="brand-cell">warnings.html</td><td class="num">Organization · BreadcrumbList · WebPage</td><td>失范公示页</td></tr>
+          <tr><td class="brand-cell">method.html</td><td class="num">Organization · DefinedTermSet · BreadcrumbList · TechArticle</td><td>方法论作为技术文献，指标定义作为术语集</td></tr>
+          <tr><td class="brand-cell">faq.html</td><td class="num">FAQPage（16 问）</td><td>长尾提问的结构化答案，最易被 AI 直接引用</td></tr>
+          <tr><td class="brand-cell">about.html</td><td class="num">Organization · BreadcrumbList · AboutPage</td><td>主体关系声明</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 定义先行 -->
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">Definition First</div>
+      <h2>二、定义先行：每页第一段就是可提取的答案</h2>
+      <p>AI 提取内容偏好「先给结论、再给依据」的结构。本站所有页面遵循同一写法：先用一句话说清这是什么，再展开细节。这一条比任何技术手段都管用。</p>
+    </div>
+    <div class="two-col">
+      <div style="background:var(--paper-2);border-left:3px solid var(--red);border-radius:0 5px 5px 0;padding:18px 20px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:.08em;margin-bottom:8px">❌ 难被引用</div>
+        <p style="font-size:14.5px;color:var(--ink-2);line-height:1.75">在当前数字化转型的大背景下，随着生成式人工智能技术的迅猛发展，越来越多的企业开始关注如何在这个新时代中把握机遇、应对挑战……</p>
+      </div>
+      <div style="background:var(--paper-2);border-left:3px solid var(--green);border-radius:0 5px 5px 0;padding:18px 20px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:.08em;margin-bottom:8px">✅ 容易被引用</div>
+        <p style="font-size:14.5px;color:var(--ink-2);line-height:1.75"><strong>GEO 是生成式引擎优化</strong>，指通过优化内容与信源，让品牌信息在生成式 AI 的回答中被检索到、被采信、被正确引用。</p>
+      </div>
+    </div>
+    <p style="font-size:14.5px;color:var(--muted);margin-top:18px;line-height:1.8">
+      差别不在文采，在结构。前者读完不知道在说什么，AI 无法从中抽出任何可陈述的事实；后者第一句就是一个完整定义，AI 可以直接抓走当答案。
+    </p>
+
+    <!-- 实体一致性 -->
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">Entity Consistency</div>
+      <h2>三、实体一致性：全站同一个名字、同一个主体</h2>
+      <p>AI 说错话的第一大原因是信息源打架。本站做过的事：</p>
+    </div>
+    <div class="dl">
+      <div class="dl-row"><dt>站名</dt><dd>GEO指数（全站统一，无简称混用）</dd></div>
+      <div class="dl-row"><dt>域名</dt><dd>geozhishu.com（canonical 全部指向它）</dd></div>
+      <div class="dl-row"><dt>运营主体</dt><dd>远见教育科技山西有限责任公司（页脚 + Organization schema 双处一致）</dd></div>
+      <div class="dl-row"><dt>指标名</dt><dd>出现率 / 位次 / 准确度 / 信源（中文名 + 英文 code 固定，不在不同页面换说法）</dd></div>
+      <div class="dl-row"><dt>权重</dt><dd>35 / 25 / 25 / 15（所有页面、所有 schema 完全一致）</dd></div>
+      <div class="dl-row"><dt>canonical</dt><dd>9 个页面全部声明，避免重复内容分散权重</dd></div>
+    </div>
+
+    <!-- AI 爬虫 -->
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">Crawler Access</div>
+      <h2>四、AI 爬虫全部放行 + llms.txt</h2>
+      <p>这一条是立场，不只是技术。本站主张「被 AI 正确引用」，如果自己屏蔽 AI 爬虫，等于自证不可信。</p>
+    </div>
+    <div class="tbl-wrap">
+      <div class="tbl-head"><h3>robots.txt 放行清单</h3><div class="meta"><a href="robots.txt">查看原文 →</a></div></div>
+      <table>
+        <thead><tr><th>AI 平台 / 爬虫</th><th>User-agent</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td class="brand-cell">OpenAI</td><td class="num">GPTBot · OAI-SearchBot · ChatGPT-User</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">Anthropic</td><td class="num">ClaudeBot · Claude-Web · anthropic-ai</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">Perplexity</td><td class="num">PerplexityBot · Perplexity-User</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">Google</td><td class="num">Googlebot · Google-Extended</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">字节 / 豆包</td><td class="num">Bytespider</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">百度</td><td class="num">Baiduspider</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">Apple</td><td class="num">Applebot-Extended</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">搜狗 / 360 / 神马</td><td class="num">Sogou web spider · 360Spider · YisouSpider</td><td><span class="pill l2">放行</span></td></tr>
+          <tr><td class="brand-cell">Cohere / Meta</td><td class="num">cohere-ai · meta-externalagent</td><td><span class="pill l2">放行</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:24px">
+      <strong>另有 <a href="llms.txt">llms.txt</a>。</strong>
+      这是给 AI 的站点说明书：用一句话说清本站是什么、核心页面有哪些、引用格式是什么、四项纪律是什么。
+      AI 读了这份文件，就不容易把「GEO指数」和别家的「GEO 指数栏目」搞混。
+    </div>
+
+    <!-- 待办 -->
+    <div class="sec-head" style="margin-top:64px">
+      <div class="tag">To Do</div>
+      <h2>五、还没做完的（照样公开）</h2>
+      <p>一份诚实的自检必须承认短板。以下两条是当前明确的缺口。</p>
+    </div>
+    <div class="warn-grid">
+      <div class="warn" style="border-left-color:var(--amber)">
+        <div class="hd"><h3>外部信源层还没建立</h3><span class="pill l3">进行中</span></div>
+        <p>本站自身的信源目前集中在 L4 企业自有层。要提升到 L2–L3，需要在权威媒体与行业机构形成可引用的报道与引用，这是外部工作，不是技术工作。计划：随首期指数榜发布同步推进。</p>
+      </div>
+      <div class="warn" style="border-left-color:var(--amber)">
+        <div class="hd"><h3>自身被 AI 引用数据尚未积累</h3><span class="pill l3">待数据</span></div>
+        <p>本站主张「用 AI 的回答自证」，但这需要站点上线并被 AI 抓取后的实测数据。当前域名尚未解析上线，无法采样。计划：上线后第 4 周开始记录，第 8 周首次公开。</p>
+      </div>
+    </div>
+
+    <div class="note amber" style="margin-top:28px">
+      <strong>为什么把短板写出来。</strong>
+      这一页如果全是打勾，它就没有信息量。可验证的自我要求，前提是敢把没做到的一起摆上桌。
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div>
+      <div class="logo"><span class="mark">GEO</span><span class="nm">GEO指数</span></div>
+      <p class="desc">生成式 AI 搜索时代的第三方度量机构。公开算法、公开样本、公开原始回答，不收排名费。</p>
+    </div>
+    <div><h4>数据产品</h4><ul><li><a href="index-rank.html">GEO 指数榜</a></li><li><a href="sources.html">信源榜</a></li><li><a href="check.html">查企业</a></li><li><a href="audit.html">服务商备案名录</a></li></ul></div>
+    <div><h4>方法论</h4><ul><li><a href="method.html">方法论 v1.0</a></li><li><a href="faq.html">常见问题</a></li><li><a href="geo-selfcheck.html">本站自检</a></li><li><a href="method.html#limits">已知局限</a></li></ul></div>
+    <div><h4>监督</h4><ul><li><a href="warnings.html">失范公示</a></li><li><a href="about.html">关于我们</a></li><li><a href="mailto:method@geozhishu.com">方法质疑</a></li><li><a href="mailto:report@geozhishu.com">失范举报</a></li></ul></div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 GEO指数 · 运营主体：远见教育科技山西有限责任公司</span>
+    <span>引用请署名 GEO指数（geozhishu.com）</span>
+  </div>
+</footer>
+
+<script>
+const CHECKS=[
+ ["全站 canonical 声明","9 个页面全部声明 canonical，统一指向 geozhishu.com","查看页面源码 head 区","done"],
+ ["JSON-LD 结构化数据","27 块，六种 schema 类型，内联于 HTML","浏览器控制台执行 document.querySelectorAll('script[type=\"application/ld+json\"]').length","done"],
+ ["Organization 实体声明","站名、主体、描述、knowsAbout 全部写入","查看 index.html 的 JSON-LD","done"],
+ ["DefinedTermSet 指标定义","四个维度全部以标准术语定义，供 AI 直接引用","查看 method.html 的 JSON-LD","done"],
+ ["Dataset 数据集声明","指数榜与信源榜声明为可引用数据集，含 CC-BY 许可","查看两个榜单页的 JSON-LD","done"],
+ ["FAQPage 问答结构","16 个高频问题结构化","查看 faq.html 的 JSON-LD","done"],
+ ["BreadcrumbList 面包屑","8 个内页全部声明层级","查看各内页 JSON-LD","done"],
+ ["定义先行写法","每页第一段即为可提取的完整定义","逐页阅读首段","done"],
+ ["H1 唯一性","每页有且仅有一个 H1","控制台执行 document.querySelectorAll('h1').length","done"],
+ ["实体命名一致","站名、主体、指标名、权重全站统一","跨页比对","done"],
+ ["AI 爬虫全部放行","robots.txt 显式放行 10 类 AI 爬虫","访问 /robots.txt","done"],
+ ["llms.txt 站点说明","给 AI 的结构化站点说明书","访问 /llms.txt","done"],
+ ["sitemap.xml","9 个页面全部列入","访问 /sitemap.xml","done"],
+ ["语义化 HTML","header/nav/main/section/footer/table 标准标签","查看页面结构","done"],
+ ["表格真实表格","榜单用 table 而非 div 堆砌，AI 易解析","查看页面源码","done"],
+ ["移动端适配","375px 无横向溢出，最小字号 13.5px","手机访问或 DevTools 切 375px","done"],
+ ["零依赖静态页","无框架、无外部 CDN，AI 可直接读取全文","查看源码无外部 script","done"],
+ ["外部权威信源","目前集中在 L4 企业自有层，需外部报道提升到 L2–L3","—","partial"],
+ ["平台自身被引用数据","需站点上线并被 AI 抓取后实测","—","partial"],
+ ["自身指数公开","计划上线后第 8 周首次公开","—","todo"],
+ ["多语言版本","英文版计划中，用于出海场景","—","todo"]
+];
+document.getElementById('checks').innerHTML=CHECKS.map((c,i)=>{
+  const [name,what,how,st]=c;
+  const badge = st==='done'?'<span class="pill l2">已完成</span>'
+              : st==='partial'?'<span class="pill l3">部分</span>'
+              : '<span class="pill" style="background:#f1ece2;color:#8a7d6b">待办</span>';
+  return `<tr><td class="rank">${String(i+1).padStart(2,'0')}</td>
+    <td class="brand-cell">${name}</td><td>${what}</td>
+    <td style="font-family:var(--mono);font-size:12.5px;color:var(--muted-2)">${how}</td>
+    <td>${badge}</td></tr>`;
+}).join('');
+document.getElementById('s-done').textContent = CHECKS.filter(c=>c[3]==='done').length;
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>查企业 — 测你的 GEO 指数 | GEO指数</title>
+<meta name="description" content="输入企业名称，免费查询 GEO 指数：品牌在豆包、DeepSeek、通义千问等 AI 搜索中的出现率、位次、准确度与信源质量。无需注册。">
+<link rel="canonical" href="https://geozhishu.com/check.html">
+<link rel="stylesheet" href="assets/style.css">
+
+
+<!-- JSON-LD:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://geozhishu.com/#organization",
+  "name": "GEO指数",
+  "alternateName": [
+    "GEO指数",
+    "geozhishu",
+    "GEO Index"
+  ],
+  "url": "https://geozhishu.com/",
+  "description": "GEO指数是中文生成式AI搜索领域的第三方度量机构，用公开算法、公开样本、公开原始回答测量品牌在AI答案中的出现率、位次、准确度与信源质量。不收排名费，不做优化执行，不承诺排名。",
+  "foundingDate": "2026-11-10",
+  "email": "method@geozhishu.com",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "远见教育科技山西有限责任公司"
+  },
+  "knowsAbout": [
+    "生成式引擎优化",
+    "GEO",
+    "AI搜索可见度",
+    "AI品牌监测",
+    "答案引擎优化",
+    "AEO",
+    "AI语料治理",
+    "信源权威度",
+    "AI幻觉检测"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://geozhishu.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "查企业",
+      "item": "https://geozhishu.com/check.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "查企业 — 测你的GEO指数",
+  "description": "输入企业名称免费查询GEO指数：AI搜索中的出现率、位次、准确度与信源质量，并给出短板诊断。",
+  "url": "https://geozhishu.com/check.html",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@id": "https://geozhishu.com/#website"
+  },
+  "publisher": {
+    "@id": "https://geozhishu.com/#organization"
+  }
+}
+</script>
+<!-- JSON-LD:END -->
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in">
+    <a href="index.html" class="logo"><span class="mark">GEO</span><span class="nm">GEO指数</span><span class="en">geozhishu.com</span></a>
+    <nav class="nav">
+      <a href="index.html">首页</a>
+      <a href="index-rank.html">指数榜</a>
+      <a href="sources.html">信源榜</a>
+      <a href="check.html" class="on">查企业</a>
+      <a href="audit.html">查服务商</a>
+      <a href="warnings.html">失范公示</a>
+      <a href="faq.html">问答</a>
+      <a href="geo-selfcheck.html">自检</a>
+      <a href="method.html">关于</a>
+    </nav>
+    <button class="mnav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="展开导航">菜单 ▾</button>
+    <a href="check.html" class="head-cta">测我的指数</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb">Check / 查企业</div>
+    <h1>查一家企业的 GEO 指数</h1>
+    <p>输入企业名称或官网域名，免费出报告。无需注册，无需绑定手机号，不收集联系方式。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+
+    <form class="search-box" style="max-width:760px" onsubmit="return doCheck(event)">
+      <div class="search-row">
+        <input type="text" id="q" placeholder="例如：中际装备制造 / zhongji-mfg.com" autocomplete="off">
+        <button type="submit">查 GEO 指数</button>
+      </div>
+      <div class="search-hint">
+        <span>✓ 免费</span><span>✓ 无需注册</span><span>✓ 不收集联系方式</span>
+      </div>
+    </form>
+
+    <div id="result" style="margin-top:44px"></div>
+
+    <!-- 报告说明 -->
+    <div id="explain">
+      <div class="sec-head" style="margin-top:64px">
+        <div class="tag">Report</div>
+        <h2>报告里有什么</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">一 / 总分</div>
+          <h3>GEO 指数与评级</h3>
+          <p>0–100 分，A/B/C/D 四档。同时给出四个维度的分项分，让你看到分是被哪一维拉低或拉高的。</p>
+        </div>
+        <div class="step">
+          <div class="n">二 / 诊断</div>
+          <h3>问题出在哪一维</h3>
+          <p>出现率低是内容覆盖问题，位次低是竞争力问题，准确度低是信息治理问题，信源低是渠道层级问题。四种病，四种药。</p>
+        </div>
+        <div class="step">
+          <div class="n">三 / 样本</div>
+          <h3>原始回答可核</h3>
+          <p>每个维度下附本期采样的问题、平台、轮次与 AI 回答摘要。有疑问可申请调取原始存档。</p>
+        </div>
+      </div>
+
+      <div class="sec-head" style="margin-top:64px">
+        <div class="tag">Interpretation</div>
+        <h2>四低一高的含义</h2>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>症状</th><th>含义</th><th>方向</th></tr></thead>
+          <tbody>
+            <tr><td class="brand-cell">出现率低</td><td>AI 在回答你的行业问题时，根本没想到你</td><td>内容覆盖与品类词占位</td></tr>
+            <tr><td class="brand-cell">位次低</td><td>提到了，但从不首推，总是在列表后半段</td><td>竞争力叙事与差异化证据</td></tr>
+            <tr><td class="brand-cell">准确度低</td><td>AI 在替你说错话，而且高频传播</td><td>信息治理：清理旧信息、统一多主体口径</td></tr>
+            <tr><td class="brand-cell">信源低</td><td>支撑你的信源都停在自媒体层</td><td>信源层级上移，从 L6 往 L1–L3 走</td></tr>
+            <tr><td class="brand-cell">准确度高但总分低</td><td>AI 说得对，但说得少。问题不在你说的对不对，在它有没有机会说</td><td>扩大问题集覆盖</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note amber" style="margin-top:28px">
+        <strong>GEO指数 不开药。</strong>
+        我们只度量，不卖优化服务，不收排名费。报告里给的是诊断方向，不是服务方案。这是为了让这份指数可以被任何一方引用而不必怀疑立场。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div>
+      <div class="logo"><span class="mark">GEO</span><span class="nm">GEO指数</span></div>
+      <p class="desc">生成式 AI 搜索时代的第三方度量机构。公开算法、公开样本、公开原始回答，不收排名费。</p>
+    </div>
+    <div><h4>数据产品</h4><ul><li><a href="index-rank.html">GEO 指数榜</a></li><li><a href="sources.html">信源榜</a></li><li><a href="check.html">查企业</a></li><li><a href="audit.html">服务商备案名录</a></li></ul></div>
+    <div><h4>方法论</h4><ul><li><a href="method.html">方法论 v1.0</a></li><li><a href="method.html#protocol">采样协议</a></li><li><a href="faq.html">常见问题</a></li><li><a href="geo-selfcheck.html">本站自检</a></li></ul></div>
+    <div><h4>监督</h4><ul><li><a href="warnings.html">失范公示</a></li><li><a href="about.html">关于我们</a></li><li><a href="mailto:method@geozhishu.com">方法质疑</a></li><li><a href="mailto:report@geozhishu.com">失范举报</a></li></ul></div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 GEO指数 · 运营主体：远见教育科技山西有限责任公司</span>
+    <span>引用请署名 GEO指数（geozhishu.com）</span>
+  </div>
+</footer>
+
+<script src="data/site-data.js"></script>
+<script>
+(function(){
+  var d=window.GZ;
+  var p=new URLSearchParams(location.search).get('q');
+  if(p){ document.getElementById('q').value=p; show(p); }
+  else{
+    document.getElementById('result').innerHTML=
+      '<div class="note" style="max-width:760px">'+
+        '<strong>输入企业名称开始查询。</strong><br>'+
+        '也可以直接试试这些已在本期样本里的企业：'+
+        d.index.slice(0,4).map(function(x){
+          return ' <a href="?q='+encodeURIComponent(x.name)+'">'+x.name+'</a>';
+        }).join('、')+'。'+
+      '</div>';
+  }
+
+  function grade(s){ return s>=70?'A':(s>=50?'B':(s>=30?'C':'D')); }
+  function gdesc(s){ return s>=70?'进入 AI 答案的稳定席位':(s>=50?'能被找到，但位次不稳':(s>=30?'仅在长尾问题中偶发出现':'在 AI 生态中基本隐身')); }
+  function cls(s){ return s>=60?'hi':(s>=40?'mid':'lo'); }
+
+  function show(name){
+    var q=name.trim().toLowerCase();
+    var r=d.index.filter(function(x){
+      return x.name.toLowerCase().indexOf(q)>=0 || x.domain.toLowerCase().indexOf(q)>=0;
+    })[0];
+
+    var el=document.getElementById('result');
+
+    if(!r){
+      el.innerHTML='<div class="note red" style="max-width:760px">'+
+        '<strong>本期样本中没有找到「'+name+'」。</strong><br>'+
+        'GEO指数 首期覆盖 300 家第三方企业样本。你的企业可以通过 <a href="mailto:data@geozhishu.com">data@geozhishu.com</a> 申请纳入下一期采样，纳入不收费。'+
+      '</div>';
+      return;
+    }
+
+    var g=grade(r.score);
+    var dims=[
+      {k:'出现率',code:'Presence',v:r.presence,w:35},
+      {k:'位次',code:'Rank',v:r.rank,w:25},
+      {k:'准确度',code:'Accuracy',v:r.accuracy,w:25},
+      {k:'信源',code:'Sources',v:r.sources,w:15}
+    ];
+    var dh='';
+    dims.forEach(function(x){
+      var c=cls(x.v);
+      dh+='<div style="display:grid;grid-template-columns:100px 1fr 48px 60px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line-2)">'+
+        '<div style="font-size:14px;font-weight:600">'+x.k+'</div>'+
+        '<div class="bar '+c+'" style="width:100%;height:6px"><i style="width:'+x.v+'%"></i></div>'+
+        '<div class="num s-'+c+'" style="font-family:var(--mono);font-weight:600">'+x.v+'</div>'+
+        '<div class="num" style="font-size:11.5px;color:var(--muted-2)">权重 '+x.w+'%</div>'+
+      '</div>';
+    });
+
+    // 诊断
+    var low=dims.slice().sort(function(a,b){return a.v-b.v;})[0];
+    var diag={
+      '出现率':'AI 在回答你的行业问题时，根本没想到你。这是内容覆盖与品类词占位的问题。',
+      '位次':'AI 提到了你，但从不首推。你的问题不是不存在，是不够强——缺差异化的可引用证据。',
+      '准确度':'AI 在替你说错话，而且高频传播。先做信息治理：清理旧信息、统一多主体口径，再谈曝光。',
+      '信源':'支撑你的信源都停在自媒体层。批量发稿能把出现率推上去，但信源分会把你钉住。'
+    };
+
+    el.innerHTML=
+      '<div style="border:1px solid var(--line);border-radius:8px;overflow:hidden;max-width:860px">'+
+        '<div style="padding:28px 30px;background:var(--paper-2);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap">'+
+          '<div>'+
+            '<div style="font-family:var(--mono);font-size:11.5px;color:var(--muted-2);letter-spacing:.08em;margin-bottom:6px">'+r.domain+' · '+r.city+'</div>'+
+            '<h2 style="font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:-.01em">'+r.name+'</h2>'+
+            '<div style="font-size:14px;color:var(--muted);margin-top:4px">'+r.industry+'</div>'+
+          '</div>'+
+          '<div style="text-align:right">'+
+            '<div style="font-family:var(--mono);font-size:44px;font-weight:700;line-height:1;letter-spacing:-.03em" class="s-'+cls(r.score)+'">'+r.score.toFixed(1)+'</div>'+
+            '<div style="font-size:12px;color:var(--muted-2);margin-top:6px">GEO 指数 / 100</div>'+
+            '<div style="margin-top:10px"><span class="pill '+(r.score>=70?'l2':(r.score>=50?'l3':'l6'))+'">评级 '+g+'</span></div>'+
+          '</div>'+
+        '</div>'+
+        '<div style="padding:24px 30px">'+dh+'</div>'+
+        '<div style="padding:0 30px 28px">'+
+          (function(){
+            if(low.v>=80){
+              return '<div style="background:var(--green-soft);border:1px solid #bbf7d0;border-radius:5px;padding:16px 18px;font-size:14.5px;color:#14532d;line-height:1.75">'+
+                '<strong>四个维度均在 75 分以上，没有明显短板。</strong><br>'+
+                '当前状态：'+gdesc(r.score)+'。这一档的提升空间在扩大问题集覆盖与维持信源层级，不在补窟窿。'+
+              '</div>';
+            }
+            return '<div style="background:var(--accent-soft);border:1px solid #cfe0ff;border-radius:5px;padding:16px 18px;font-size:14.5px;color:#1e3a8a;line-height:1.75">'+
+              '<strong>诊断：最短板是「'+low.k+'」（'+low.v+' 分）。</strong><br>'+diag[low.k]+
+            '</div>';
+          })()+
+          '<div style="margin-top:20px;font-size:13px;color:var(--muted-2);line-height:1.7">'+
+            '采样期 '+d.meta.samplePeriod+' · '+d.meta.platforms.length+' 平台 × '+d.meta.rounds+' 轮 · 评级口径：'+gdesc(r.score)+
+            '<br>数据状态：演示样本。真实采样管线接入后自动替换。'+
+          '</div>'+
+        '</div>'+
+      '</div>';
+  }
+
+  window.doCheck=function(e){
+    e.preventDefault();
+    var v=document.getElementById('q').value.trim();
+    if(!v) return false;
+    history.replaceState(null,'','?q='+encodeURIComponent(v));
+    show(v);
+    document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+    return false;
+  };
+})();
+</script>
+</body>
+</html>

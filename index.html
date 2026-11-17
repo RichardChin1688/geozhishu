@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEO指数 — 生成式AI搜索时代的第三方度量机构</title>
+<meta name="description" content="GEO指数（geozhishu.com）公开算法、公开样本、公开原始回答，测量品牌在豆包、DeepSeek、通义千问等生成式AI搜索中的可见度、位次、准确度与信源质量。">
+<meta name="keywords" content="GEO指数,生成式引擎优化,GEO,AI搜索可见度,AI可见度,品牌AI排名">
+<link rel="canonical" href="https://geozhishu.com/">
+<link rel="stylesheet" href="assets/style.css">
+
+
+<!-- JSON-LD:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://geozhishu.com/#organization",
+  "name": "GEO指数",
+  "alternateName": [
+    "GEO指数",
+    "geozhishu",
+    "GEO Index"
+  ],
+  "url": "https://geozhishu.com/",
+  "description": "GEO指数是中文生成式AI搜索领域的第三方度量机构，用公开算法、公开样本、公开原始回答测量品牌在AI答案中的出现率、位次、准确度与信源质量。不收排名费，不做优化执行，不承诺排名。",
+  "foundingDate": "2026-11-10",
+  "email": "method@geozhishu.com",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "远见教育科技山西有限责任公司"
+  },
+  "knowsAbout": [
+    "生成式引擎优化",
+    "GEO",
+    "AI搜索可见度",
+    "AI品牌监测",
+    "答案引擎优化",
+    "AEO",
+    "AI语料治理",
+    "信源权威度",
+    "AI幻觉检测"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://geozhishu.com/#website",
+  "url": "https://geozhishu.com/",
+  "name": "GEO指数",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@id": "https://geozhishu.com/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://geozhishu.com/check.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "https://geozhishu.com/method.html#termset",
+  "name": "GEO指数 指标定义集",
+  "description": "GEO指数的四个维度与计算方式的正式定义，供AI引擎与研究者引用。",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "GEO指数",
+      "termCode": "GEO-Index",
+      "description": "GEO指数是一个0到100分的综合度量，描述一个企业或品牌在生成式AI搜索中被提及、被推荐、被准确描述、被权威信源支撑的程度。总分等于35%出现率加25%位次加25%准确度加15%信源。"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "出现率",
+      "termCode": "Presence",
+      "description": "出现率指在标准问题集的全部采样中，品牌被提及的采样占比，计算方式为被提及采样数除以有效采样总数。权重35%，是GEO指数中权重最高的维度。"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "位次",
+      "termCode": "Rank",
+      "description": "位次指品牌被AI提及时所处的推荐位置，转换为0到100分。首选推荐得100分，第二位88分，第三位78分，逐位递减。权重25%。"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "准确度",
+      "termCode": "Accuracy",
+      "description": "准确度指AI对品牌的描述中与事实相符的比例，计算方式为正确陈述数除以可核查陈述总数再减幻觉惩罚。每条严重幻觉扣10分，轻微错误扣3分。权重25%。"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "信源",
+      "termCode": "Sources",
+      "description": "信源指支撑AI对品牌描述的引用来源的权威层级加权平均分。分七层：L1官方与法定100分，L2权威媒体85分，L3行业与学术75分，L4企业自有60分，L5垂直平台45分，L6自媒体20分，L7不可溯源0分。权重15%。"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "GEO指数 — 生成式AI搜索时代的第三方度量机构",
+  "description": "GEO指数公开算法、公开样本、公开原始回答，测量品牌在豆包、DeepSeek、通义千问等生成式AI搜索中的可见度、位次、准确度与信源质量。",
+  "url": "https://geozhishu.com/",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@id": "https://geozhishu.com/#website"
+  },
+  "publisher": {
+    "@id": "https://geozhishu.com/#organization"
+  }
+}
+</script>
+<!-- JSON-LD:END -->
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in">
+    <a href="index.html" class="logo">
+      <span class="mark">GEO</span>
+      <span class="nm">GEO指数</span>
+      <span class="en">geozhishu.com</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="on">首页</a>
+      <a href="index-rank.html">指数榜</a>
+      <a href="sources.html">信源榜</a>
+      <a href="check.html">查企业</a>
+      <a href="audit.html">查服务商</a>
+      <a href="warnings.html">失范公示</a>
+      <a href="faq.html">问答</a>
+      <a href="geo-selfcheck.html">自检</a>
+      <a href="method.html">关于</a>
+    </nav>
+    <button class="mnav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')" aria-label="展开导航">菜单 ▾</button>
+    <a href="check.html" class="head-cta">测我的指数</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">GEO Index · 第三方度量机构</div>
+    <h1>你的品牌在 AI 的回答里，<br>排第几？</h1>
+    <p class="lede">
+      2026 年 6 月，中国生成式 AI 搜索用户达到 <strong>6.83 亿</strong>。
+      用户在豆包、DeepSeek、通义千问里提问，AI 直接给出答案，链接被跳过。
+      出现在答案里，或者消失——中间没有第三种状态。GEO指数 测量你处在哪一边。
+    </p>
+
+    <form class="search-box" onsubmit="return goCheck(event)">
+      <div class="search-row">
+        <input type="text" id="q" placeholder="输入企业名称或官网域名，例如：天翼恒盛" autocomplete="off">
+        <button type="submit">测 GEO 指数</button>
+      </div>
+      <div class="search-hint">
+        <span>✓ 免费</span>
+        <span>✓ 无需注册</span>
+        <span>✓ 算法公开可复现</span>
+        <span>✓ 不收排名费</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat">
+      <div class="num">6.83<small>亿</small></div>
+      <div class="lb">生成式 AI 搜索用户（CNNIC 2026.06）</div>
+    </div>
+    <div class="stat">
+      <div class="num">38.7<small>%</small></div>
+      <div class="lb">AI 搜索渗透率</div>
+    </div>
+    <div class="stat">
+      <div class="num">286<small>亿</small></div>
+      <div class="lb">2026 中国 GEO 市场规模预测</div>
+    </div>
+    <div class="stat">
+      <div class="num">9<small>平台</small></div>
+      <div class="lb">采样覆盖（国内 6 + 出海 3）</div>
+    </div>
+  </div>
+</div>
+
+<!-- 为什么需要一个第三方 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Why GEO Index</div>
+      <h2>行业缺的不是服务商，是一把可以被检查的尺子</h2>
+      <p>
+        2026 年 3 月，总台「3·15」晚会曝光 AI 语料投毒：一款名为「力擎 GEO 优化系统」的软件批量生成虚假软文，
+        让一款并不存在的智能手环「Apollo-9」成为两家大模型的标准答案。此后，几乎所有企业都在问同一个问题——
+        <strong style="color:var(--ink)">我怎么知道我的 AI 排名是真的？</strong>
+      </p>
+    </div>
+
+    <div class="plist">
+      <div class="pitem">
+        <div class="ic">01</div>
+        <div>
+          <h3>算法公开，任何人可以复现</h3>
+          <p>四个维度的权重、采样轮次、问题集模板、位次判定规则，全部写在公开的方法论文档里。任何人可以按文档独立算出和我们一样的数字。凡不能复现的，我们视为我们的错误。</p>
+        </div>
+      </div>
+      <div class="pitem">
+        <div class="ic">02</div>
+        <div>
+          <h3>原始回答全存档，异议可调取</h3>
+          <p>每一次采样，AI 回答全文、引用来源、时间戳、评审编号，完整存档不少于 24 个月。任何人对任何一期指数有异议，可以申请调取该期原始数据核对。</p>
+        </div>
+      </div>
+      <div class="pitem">
+        <div class="ic">03</div>
+        <div>
+          <h3>不收排名费，入榜退榜都不收钱</h3>
+          <p>榜单上的位置只用数据换。这是我们唯一能证明自己不是又一家的方式——收费即出局，写进方法论第 5 节。</p>
+        </div>
+      </div>
+      <div class="pitem">
+        <div class="ic">04</div>
+        <div>
+          <h3>关联方单独成表，标注并延迟 60 天</h3>
+          <p>运营方关联企业及其客户不进入常规榜单，单独成表、明确标注「关联方」、延迟不少于 60 天进入。我们自己也在被量。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 四把秤 -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Methodology</div>
+      <h2>GEO 指数怎么算：四个维度</h2>
+      <p>总分 = 35% 出现率 + 25% 位次 + 25% 准确度 + 15% 信源。维度之间相互独立，一个维度做得好不能补偿另一个维度的塌陷——这是刻意的设计。</p>
+    </div>
+
+    <div class="scales">
+      <div class="scale">
+        <div class="w">35% 权重</div>
+        <h3>出现率</h3>
+        <div class="code">Presence</div>
+        <p>AI 在回答相关问题的时候，提到你了吗。品牌名、企业全称、核心产品名、官网域名，出现任一形式即计入。</p>
+        <div class="formula">被提及采样数 ÷ 有效采样总数</div>
+      </div>
+      <div class="scale">
+        <div class="w">25% 权重</div>
+        <h3>位次</h3>
+        <div class="code">Rank</div>
+        <p>提到你的时候，你排第几。首选推荐得 100 分，逐位递减。位次由双评审独立判定，分歧超 1 位由第三方裁定。</p>
+        <div class="formula">Σ位次得分 ÷ 被提及采样数</div>
+      </div>
+      <div class="scale">
+        <div class="w">25% 权重</div>
+        <h3>准确度</h3>
+        <div class="code">Accuracy</div>
+        <p>AI 说你的那些话，有多少是对的。成立年限、资质、产品参数、主营业务，逐条核查。编造资质每条扣 10 分。</p>
+        <div class="formula">正确陈述 ÷ 可核查陈述 − 幻觉惩罚</div>
+      </div>
+      <div class="scale">
+        <div class="w">15% 权重</div>
+        <h3>信源</h3>
+        <div class="code">Sources</div>
+        <p>支撑这些描述的信源，够不够硬。政府公示 100 分，央媒 85 分，自媒体与批量内容站 20 分，不可溯源 0 分。</p>
+        <div class="formula">Σ信源层级分值 ÷ 引用条数</div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:32px">
+      <strong>为什么准确度占 25%。</strong>
+      一家企业可以被 AI 高频提及，同时被 AI 系统地描述错误——这种情况在改名企业、多主体企业、有过并购的企业里极其常见。
+      出现率高但准确度低，意味着 AI 在替你说错话，这种暴露比不被提及更危险。GEO指数 把它单独计分，理由就在这里。
+    </div>
+  </div>
+</section>
+
+<!-- 榜单预览 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Latest · 首期</div>
+      <h2>2026 年第 46 周 GEO 指数榜</h2>
+      <p>
+        首期覆盖 300 家第三方企业样本，10 个行业线。完整榜单与分行业榜见「指数榜」页。
+        <span style="display:block;margin-top:10px;font-size:14px;color:var(--muted-2)">
+          ⚠ 当前展示演示数据（50 家），仅用于站点结构验收；真实采样管线接入后自动替换。
+        </span>
+      </p>
+    </div>
+
+    <div class="tbl-wrap">
+      <div class="tbl-head">
+        <h3>综合指数 · Top 10</h3>
+        <div class="meta">采样期 2026-W46 · 5 轮 × 6 平台</div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>#</th><th>企业</th><th>行业</th><th>GEO 指数</th><th></th><th>出现率</th><th>位次</th><th>准确度</th><th>信源</th></tr>
+        </thead>
+        <tbody id="top10"></tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+      <a href="index-rank.html" class="btn">查看完整榜单</a>
+      <a href="method.html" class="btn ghost">阅读方法论全文</a>
+    </div>
+  </div>
+</section>
+
+<!-- 三张秤 -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Three Scales</div>
+      <h2>我们公开维护的三张秤</h2>
+      <p>测企业、测媒体、测同行。三张秤共用同一套采样协议与存档标准。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">秤 1 / 测企业</div>
+        <h3>GEO 指数</h3>
+        <p>0–100 分，四维加权。输入企业名，测它在 AI 搜索中的出现率、位次、准确度与信源质量。每周更新，历史可回溯。</p>
+      </div>
+      <div class="step">
+        <div class="n">秤 2 / 测媒体</div>
+        <h3>信源榜</h3>
+        <p>被 AI 引用最多的域名 Top 100，按行业分会。哪些信源在什么行业被 AI 采信，是企业铺设内容的落点依据。</p>
+      </div>
+      <div class="step">
+        <div class="n">秤 3 / 测同行</div>
+        <h3>服务商审计</h3>
+        <p>GEO 服务商备案名录。进入名录须提交专利/软著、公开方法论、带基线的案例三项可验证证据。关联方无豁免。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 失范公示预览 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Accountability</div>
+      <h2>失范公示：把手法拆开给企业看</h2>
+      <p>公示手法不点名主体，每条有可公开核对的依据，接受被公示方申辩。这是 GEO指数 公信力的来源。</p>
+    </div>
+
+    <div class="warn-grid" id="warnPreview"></div>
+
+    <div style="margin-top:28px">
+      <a href="warnings.html" class="btn">查看全部公示</a>
+    </div>
+  </div>
+</section>
+
+<!-- 发布节奏 -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Cadence</div>
+      <h2>发布节奏</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>周期</th><th>内容</th><th>时间</th></tr></thead>
+        <tbody>
+          <tr><td class="num">每周</td><td>样本企业指数更新</td><td>周一采样，周三 10:00 发布</td></tr>
+          <tr><td class="num">每月</td><td>行业分榜、城市分榜、信源榜全量更新</td><td>每月第一个周三</td></tr>
+          <tr><td class="num">每季</td><td>《GEO 指数季报》</td><td>季度末次月第二周</td></tr>
+          <tr><td class="num">每年</td><td>《中国 GEO 指数年鉴》</td><td>次年 1 月</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note amber" style="margin-top:24px">
+      <strong>数据截止与发布时间差不少于 36 小时。</strong>用于人工复核与争议处理，不允许「采样完直接发」。
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div>
+      <div class="logo">
+        <span class="mark">GEO</span>
+        <span class="nm">GEO指数</span>
+      </div>
+      <p class="desc">生成式 AI 搜索时代的第三方度量机构。公开算法、公开样本、公开原始回答，不收排名费。</p>
+    </div>
+    <div>
+      <h4>数据产品</h4>
+      <ul>
+        <li><a href="index-rank.html">GEO 指数榜</a></li>
+        <li><a href="sources.html">信源榜</a></li>
+        <li><a href="check.html">查企业</a></li>
+        <li><a href="audit.html">服务商备案名录</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>方法论</h4>
+      <ul>
+        <li><a href="method.html">方法论 v1.0</a></li>
+        <li><a href="method.html#protocol">采样协议</a></li>
+        <li><a href="method.html#limits">已知局限</a></li>
+        <li><a href="method.html#changelog">算法变更日志</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>监督</h4>
+      <ul>
+        <li><a href="warnings.html">失范公示</a></li>
+        <li><a href="about.html">关于我们</a></li>
+        <li><a href="mailto:method@geozhishu.com">方法质疑</a></li>
+        <li><a href="mailto:report@geozhishu.com">失范举报</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 GEO指数 · 运营主体：远见教育科技山西有限责任公司</span>
+    <span>数据来源见各榜单页 · 引用请署名 GEO指数（geozhishu.com）</span>
+  </div>
+</footer>
+
+<script src="data/site-data.js"></script>
+<script>
+function goCheck(e){
+  e.preventDefault();
+  var v=document.getElementById('q').value.trim();
+  location.href='check.html'+(v?'?q='+encodeURIComponent(v):'');
+  return false;
+}
+(function(){
+  var d=window.GZ;
+  // Top 10
+  var t=document.getElementById('top10'), h='';
+  d.index.slice(0,10).forEach(function(r,i){
+    var cls=r.score>=60?'hi':(r.score>=40?'mid':'lo');
+    h+='<tr>'+
+      '<td class="rank'+(i<3?' top':'')+'">'+(i+1)+'</td>'+
+      '<td class="brand-cell">'+r.name+'<span class="sub">'+r.domain+'</span></td>'+
+      '<td>'+r.industry+'</td>'+
+      '<td><span class="score s-'+cls+'">'+r.score.toFixed(1)+'</span></td>'+
+      '<td><div class="bar '+cls+'"><i style="width:'+r.score+'%"></i></div></td>'+
+      '<td class="num">'+r.presence+'</td>'+
+      '<td class="num">'+r.rank+'</td>'+
+      '<td class="num">'+r.accuracy+'</td>'+
+      '<td class="num">'+r.sources+'</td>'+
+    '</tr>';
+  });
+  t.innerHTML=h;
+
+  // warnings preview
+  var w=document.getElementById('warnPreview'), wh='';
+  d.warnings.slice(0,2).forEach(function(x){
+    wh+='<div class="warn">'+
+      '<div class="hd"><h3>'+x.title+'</h3><span class="pill l6">'+x.level+'</span></div>'+
+      '<div class="src">依据：'+x.source+'</div>'+
+      '<p style="margin-top:10px">'+x.summary+'</p>'+
+      '<div class="chain">'+x.chain+'</div>'+
+    '</div>';
+  });
+  w.innerHTML=wh;
+})();
+</script>
+</body>
+</html>
