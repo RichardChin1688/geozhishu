@@ -2946,7 +2946,7 @@ window.DASH = {
   ],
   "voice": {
     "audio": "",
-    "sub": "序章茶业 T0 诊断播报 · 有产品、无阵地",
+    "sub": "序章茶业 T0 · 有产品、无阵地",
     "script": [
       "序章是一家有产品、有定位、有故事的六堡茶品牌。真正缺的不是东西，是让别人买得到、查得到、信得过的阵地。",
       "先看家底。零二零年起于一间小茶店，二二年成立河北公司，二四年在梧州建厂：河北做品牌与北方仓，广西做生产与陈化。官网六十三款茶全部标价，四十八元的茶包到九千九百九十八元的呈迹一九九四。今年五月到七月，从沈阳到西安连跑九场品鉴会；郑州茶博会的优选展商名单里，和梧州茶厂、茂圣并列。",
@@ -3458,7 +3458,7 @@ function icon(name, cls) {
       // —— 方案页 ——
       svc1: "基础工程", svc2: "当代传播", modes: "合作模式",
       path: "推进路径", promise: "守的规矩",
-      voice: "语音", plan: "方案", timeline: "节点"
+      voice: "分析", plan: "方案", timeline: "节点"
     };
     items.push(["overview", "grid", "总览"]);
     var order = D.sectionOrder && D.sectionOrder.length ? D.sectionOrder : (D.sections || []).map(function (s) { return s.id; });
@@ -3467,7 +3467,7 @@ function icon(name, cls) {
       if (!sec || !sec.name) return;
       items.push([sec.id, sec.icon || "chart", sec.name]);
     });
-    if (D.voice && (D.voice.script || D.voice.audio)) items.push(["voice", "mic", "语音播报"]);
+    if (D.voice && (D.voice.script || D.voice.audio)) items.push(["voice", "mic", "AI智能分析"]);
     if (D.plan && (D.plan.phases || D.plan.script)) items.push(["plan", "bulb", "优化方案"]);
     if ((D.timeline || []).length) items.push(["timeline", "calendar", "节点规划"]);
     // 去重（防重复 id）
@@ -3907,9 +3907,9 @@ function icon(name, cls) {
     const el = $("voice");
     if (!el || !v) { if (el) el.style.display = "none"; return; }
     const tEl = el.querySelector(".chart-title");
-    if (tEl) tEl.innerHTML = icon("mic", "ic") + " 语音播报";
+    if (tEl) tEl.innerHTML = icon("mic", "ic") + " AI智能分析";
     const subEl = el.querySelector(".voice-sub");
-    if (subEl) subEl.innerHTML = esc(v.sub || "要点播报");
+    if (subEl) subEl.innerHTML = esc(v.sub || "AI 分析要点");
     const txtEl = el.querySelector(".voice-script");
     if (txtEl) txtEl.innerHTML = (v.script || []).map(function (p) { return "<p>" + markKey(p) + "</p>"; }).join("");
     // 音频资源：首屏渲染完成后即后台预下载，点播放时直接出声不卡
@@ -3921,7 +3921,7 @@ function icon(name, cls) {
       box.load();  // 立即开始下载整段音频
     }
     const btn = el.querySelector(".voice-btn");
-    const LABEL_PLAY = icon("play", "playic") + " 播放语音播报";
+    const LABEL_PLAY = icon("play", "playic") + " 播放AI智能分析";
     const LABEL_PAUSE = "⏸ 暂停播报";
     function fmtPct(){ try { if (box && box.duration && isFinite(box.duration) && box.buffered.length) {
         var e = box.buffered.end(box.buffered.length - 1);
@@ -3931,7 +3931,7 @@ function icon(name, cls) {
       // 下载阶段：显示进度，提示可提前点播放
       function markLoading(){
         var p = fmtPct();
-        btn.innerHTML = "⏳ 语音下载中" + (p !== null ? " " + p + "%" : "") + "（点此可先播放）";
+        btn.innerHTML = "⏳ 分析加载中" + (p !== null ? " " + p + "%" : "") + "（点此可先播放）";
         btn.dataset.loading = "1";
       }
       if (box && box.readyState < 3) markLoading();
