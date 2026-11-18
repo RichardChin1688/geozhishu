@@ -3244,7 +3244,7 @@ window.DASH = {
   <section class="card" id="voice" style="display:none">
     <h2 class="chart-title"></h2>
     <div class="voice-sub" style="font-size:14px;color:#93a4bc;margin:-4px 0 12px"></div>
-    <audio id="voiceAudio" controls preload="none" style="width:100%;margin-bottom:14px;display:none"></audio>
+    <audio id="voiceAudio" controls preload="auto" style="width:100%;margin-bottom:14px;display:none"></audio>
     <button type="button" class="voice-btn"></button>
     <div class="voice-script"></div>
   </section>
@@ -3912,28 +3912,48 @@ function icon(name, cls) {
     if (subEl) subEl.innerHTML = esc(v.sub || "要点播报");
     const txtEl = el.querySelector(".voice-script");
     if (txtEl) txtEl.innerHTML = (v.script || []).map(function (p) { return "<p>" + markKey(p) + "</p>"; }).join("");
-    // 音频资源
+    // 音频资源：首屏渲染完成后即后台预下载，点播放时直接出声不卡
     const box = el.querySelector("#voiceAudio");
-    if (box) {
-      if (v.audio) { try { box.src = v.audio; box.load(); } catch (e) {} }
-      else if (!box.getAttribute("src")) {
-        // 音频已外置到独立文件，避免 4.38MB 内联 base64 拖死手机首屏
-        box.setAttribute("src", "audio/voice.mp3");
-        box.setAttribute("preload", "none");
-      }
+    const src = v.audio || "audio/voice.mp3";
+    if (box && !box.getAttribute("src")) {
+      box.setAttribute("src", src);
+      box.setAttribute("preload", "auto");
+      box.load();  // 立即开始下载整段音频
     }
     const btn = el.querySelector(".voice-btn");
+    const LABEL_PLAY = icon("play", "playic") + " 播放语音播报";
+    const LABEL_PAUSE = "⏸ 暂停播报";
+    function fmtPct(){ try { if (box && box.duration && isFinite(box.duration) && box.buffered.length) {
+        var e = box.buffered.end(box.buffered.length - 1);
+        return Math.min(100, Math.round(e / box.duration * 100));
+      } } catch(e){} return null; }
     if (btn) {
-      btn.innerHTML = icon("play", "playic") + " 播放语音播报";
+      // 下载阶段：显示进度，提示可提前点播放
+      function markLoading(){
+        var p = fmtPct();
+        btn.innerHTML = "⏳ 语音下载中" + (p !== null ? " " + p + "%" : "") + "（点此可先播放）";
+        btn.dataset.loading = "1";
+      }
+      if (box && box.readyState < 3) markLoading();
+      if (box) {
+        box.addEventListener("progress", function(){ if (box.readyState < 3 && btn.dataset.loading === "1") markLoading(); });
+        box.addEventListener("canplaythrough", function(){ btn.dataset.loading = ""; if (box.paused) btn.innerHTML = LABEL_PLAY; });
+        box.addEventListener("canplay", function(){ btn.dataset.loading = ""; if (box.paused) btn.innerHTML = LABEL_PLAY; });
+        box.addEventListener("loadeddata", function(){ btn.dataset.loading = ""; if (box.paused) btn.innerHTML = LABEL_PLAY; });
+      }
+      btn.innerHTML = LABEL_PLAY;
       btn.addEventListener("click", function () {
         if (!box) return;
-        if (box.paused) { try { var pr = box.play(); if (pr && pr.then) pr.catch(function (){}); } catch (e) {} btn.innerHTML = "⏸ 暂停播报"; if (box.onplaying) {} }
-        else { box.pause(); btn.innerHTML = icon("play", "playic") + " 播放语音播报"; }
-        if (box.onended === null) {}
+        if (box.paused) {
+          try { var pr = box.play(); if (pr && pr.then) pr.catch(function(){}); } catch (e) {}
+          btn.innerHTML = LABEL_PAUSE;
+        } else {
+          box.pause(); btn.innerHTML = LABEL_PLAY;
+        }
       });
-      if (box) box.addEventListener("ended", function () { btn.innerHTML = icon("play", "playic") + " 播放语音播报"; });
-      if (box) box.addEventListener("pause", function () { btn.innerHTML = icon("play", "playic") + " 播放语音播报"; });
-      if (box) box.addEventListener("playing", function () { btn.innerHTML = "⏸ 暂停播报"; });
+      if (box) box.addEventListener("ended", function () { btn.innerHTML = LABEL_PLAY; });
+      if (box) box.addEventListener("pause", function () { btn.innerHTML = LABEL_PLAY; });
+      if (box) box.addEventListener("playing", function () { btn.innerHTML = LABEL_PAUSE; });
     }
     el.style.display = "";
   }
