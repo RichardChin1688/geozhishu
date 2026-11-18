@@ -1,0 +1,8 @@
+/xuzhang/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/xuzhang/
+  Cache-Control: no-cache, must-revalidate
+
+/*
+  Cache-Control: public, max-age=3600
